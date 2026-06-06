@@ -1,0 +1,206 @@
+@import url('https://fonts.googleapis.com/css?family=Lora:400|Sorts+Mill+Goudy&display=swap');
+/*@import "animations.css";*/
+
+/* Dokumentin perustan ja grid layoutin määrittelyt */
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+	font-family: "Lora", serif;
+	font-size: 100%;
+	background-color: #F7F5EE;
+}
+
+main {
+	display: grid;
+	grid-template-areas: 
+		"header header header"
+		"nav article aside";
+	/* Lasketaan vasemman palstan leveys niin, että sisältö mahtuu aina ja suurimmillaan 15% leveydestä
+		lisättynä 15% vierityspalkin viemästä tilasta, jos vierityspalkki on esillä. Tällä estetään sisällön
+		pienet siirtymät sivusuunnassa vierityspalkittomien ja vierityspalkillisten sivujen välillä. */
+	grid-template-columns: minmax(min-content, calc(15% + 0.15*(100vw - 100%))) 70% 1fr;
+				/*minmax(min-content, 15%) 
+        2fr 
+        minmax(200px, 1fr);*/
+	grid-template-rows: min-content auto;
+	min-height: 100vh;
+}
+
+@media (max-width: 768px) {
+  main {
+    grid-template-areas:
+      "nav"
+      "article";
+    grid-template-columns: 1fr;
+  }
+
+  header {
+    padding-left: 1em;
+  }
+
+  article {
+    padding: 1.5em;
+  }
+
+  nav,
+  nav ul,
+  aside ul {
+    position: static;
+  }
+
+  aside {
+    border-left: none;
+    border-top: 2px solid #e69419;
+  }
+}
+
+/* Otsakkeen määrittelyt */
+header {
+	grid-area: header;
+	font-size: 120%;
+	background-color: #d7cda8;
+	padding: 1.5em 0em;
+	/* Tällä estetään otsakkeen pienet sivusiirtymät vierityspalkin ilmestyessä. */
+	padding-left: calc(15% + 0.15*(100vw - 100%));
+}
+
+header img {
+	display: block;
+	max-width: 100%;
+	height: auto;
+}
+
+/* Navigointipalkin määrittelyt, navigointilinkit toteutetaan listaelementteinä */
+nav {
+	grid-area: nav;
+	background-color: #d7cda8;
+	padding-top: 2em;
+	position: sticky;
+}
+
+nav ul {
+	margin: 0em;
+	padding: 0em 0em;
+	position: sticky;
+  top: 0;
+}
+
+nav ul li {
+	list-style: none;
+	list-style-position: inside;
+}
+
+.nav-list {
+	padding: 0em 1em;
+}
+
+nav ul li a {
+	width: 100%;
+	background-color: #000066;
+  color: white;
+  padding: 0.8em 1em;
+  text-align: center;
+  text-decoration: none;
+  font-weight: bold;
+  display: inline-block;
+  margin: 0.2em 0em;
+}
+
+nav ul li a:hover {
+ 	background-color: #0000b3;
+}
+
+nav ul li a.active {
+ 	background-color: #1a1aff;
+}
+
+nav img {
+	display: inline-block;
+	width: 100%;
+	top: 0;
+}
+
+/* Kirjanmerkkipalkin animoinnit, kirjanmerkit toteutetaan listaelementteinä */
+aside {
+	grid-area: aside;
+	background-color: #F7F5EE;
+	padding: 2em 1em 0em 1em;
+	border-left: 2px solid #e69419;
+}
+
+aside ul {
+	margin: 0em;
+	padding: 1em 0em;
+	position: sticky;
+  top: 0;
+}
+
+aside ul li {
+	list-style: none;
+	list-style-position: inside;
+}
+
+aside ul li a {
+	color: black;
+  	text-decoration: none;
+  	font-weight: bold;
+  	display: inline-block;
+  	margin: 0.3em 0em;
+}
+
+aside ul li a:hover {
+ 	color: #0000e6;
+}
+
+aside ul li a:active {
+ 	color: transparent;
+ 	background-color: transparent; 
+}
+
+/* Pääsisällön määrittelyt */
+article {
+	grid-area: article;
+	padding: 4em;
+	background-color: #F7F5EE;
+	font-family: "Sorts Mill Goudy";
+	border-left: 2px solid #e69419;
+}
+
+section {
+	font-size: 120%;
+	background-color: #F7F5EE;
+	margin-bottom: 1em;
+	text-align: left;
+	overflow: hidden;
+}
+
+/* Tavallisten linkkien määrittelyt */
+a {
+	text-decoration-style: dotted;
+	color: black;
+}
+
+/* Taulukoiden määrittelyt */
+table {
+	border-collapse: collapse;
+}
+
+td {
+	padding-left: 0.5em;
+	padding-right: 0.5em;
+} 
+
+tr:nth-child(even) {
+	background-color: #efebdc;
+}
+
+tr:nth-child(odd) {
+	background-color: #dfd7b9;
+}
