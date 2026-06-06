@@ -9,12 +9,14 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 body {
 	font-family: "Lora", serif;
 	font-size: 100%;
 	background-color: #F7F5EE;
+	overflow-x: hidden;
 }
 
 main {
@@ -46,13 +48,14 @@ main {
   }
 
   article {
-    padding: 0.5em;
+	border-left: none;
   }
 
   nav,
   nav ul,
   aside ul {
     position: static;
+	border-left: none;
   }
 
   aside {
