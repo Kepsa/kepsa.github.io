@@ -42,11 +42,11 @@ main {
   }
 
   header {
-    padding-left: 1em;
+    display: none;
   }
 
   article {
-    padding: 1.5em;
+    padding: 0.5em;
   }
 
   nav,
