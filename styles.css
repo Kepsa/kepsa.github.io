@@ -56,8 +56,7 @@ main {
   }
 
   aside {
-    border-left: none;
-    border-top: 2px solid #e69419;
+    display: none;
   }
 }
 
