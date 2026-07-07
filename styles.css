@@ -178,7 +178,7 @@ tr:nth-child(odd) {
   }
 
   article {
-    padding: 0.5em;
+    padding: 1em;
     border-left: none;
     font-size: 0.8rem;
   }
