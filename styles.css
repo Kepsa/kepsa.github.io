@@ -9,14 +9,12 @@
 
 html {
   scroll-behavior: smooth;
-  overflow-x: hidden;
 }
 
 body {
 	font-family: "Lora", serif;
 	font-size: 100%;
 	background-color: #F7F5EE;
-	overflow-x: hidden;
 }
 
 main {
@@ -32,7 +30,6 @@ main {
         2fr 
         minmax(200px, 1fr);*/
 	grid-template-rows: min-content auto;
-	overflow-y: auto;
 	height: 100vh;
 }
 
@@ -45,28 +42,22 @@ main {
   }
 
   header {
-    display: none;
+    padding-left: 1em;
   }
 
   article {
-		border-left: none;
+    padding: 1.5em;
   }
 
   nav,
   nav ul,
   aside ul {
     position: static;
-		border-left: none;
   }
 
   aside {
-    display: none;
-  }
-
-  /* Add small side padding for the publications table on phones */
-  article table {
-    padding-left: 4px;
-    padding-right: 4px;
+    border-left: none;
+    border-top: 2px solid #e69419;
   }
 }
 
@@ -110,6 +101,26 @@ nav ul li {
 	padding: 0em 1em;
 }
 
+nav ul li a {
+	width: 100%;
+	background-color: #000066;
+  color: white;
+  padding: 0.8em 1em;
+  text-align: center;
+  text-decoration: none;
+  font-weight: bold;
+  display: inline-block;
+  margin: 0.2em 0em;
+}
+
+nav ul li a:hover {
+ 	background-color: #0000b3;
+}
+
+nav ul li a.active {
+ 	background-color: #1a1aff;
+}
+
 nav img {
 	display: inline-block;
 	width: 100%;
@@ -119,10 +130,10 @@ nav img {
 /* Kirjanmerkkipalkin animoinnit, kirjanmerkit toteutetaan listaelementteinä */
 aside {
 	grid-area: aside;
+	top: 0;
 	background-color: #F7F5EE;
 	padding: 2em 1em 0em 1em;
 	border-left: 2px solid #e69419;
-	position: sticky;
 }
 
 aside ul {
@@ -157,7 +168,7 @@ aside ul li a:active {
 /* Pääsisällön määrittelyt */
 article {
 	grid-area: article;
-	padding: 3em;
+	padding: 4em;
 	background-color: #F7F5EE;
 	font-family: "Sorts Mill Goudy";
 	border-left: 2px solid #e69419;
