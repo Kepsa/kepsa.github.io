@@ -9,12 +9,16 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
+  max-width: 100%;
 }
 
 body {
 	font-family: "Lora", serif;
 	font-size: 100%;
 	background-color: #F7F5EE;
+	overflow-x: hidden;
+	width: 100%;
 }
 
 main {
@@ -46,13 +50,15 @@ main {
   }
 
   article {
-    padding: 1.5em;
+    padding: 0.5em;
+    border-left: none;
   }
 
   nav,
   nav ul,
   aside ul {
     position: static;
+    border-left: none;
   }
 
   aside {
