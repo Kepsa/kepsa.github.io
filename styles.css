@@ -40,9 +40,12 @@ main {
 @media (max-width: 768px) {
   main {
     grid-template-areas:
+    	"header"
       "nav"
       "article";
     grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    height: auto;
   }
 
   header {
@@ -58,7 +61,6 @@ main {
   nav ul,
   aside ul {
     position: static;
-    border-left: none;
   }
 
   aside {
